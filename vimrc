@@ -293,7 +293,7 @@ endif
 
 " _. Rust {{{
 if count(g:vimified_packages, 'rust')
-    Bundle 'wting/rust.vim'
+    Bundle 'rust-lang/rust.vim'
 endif
 " }}}
 
