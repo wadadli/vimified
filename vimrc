@@ -61,12 +61,6 @@ endif
 if count(g:vimified_packages, 'general')
     Bundle 'editorconfig/editorconfig-vim'
 
-    Bundle 'rking/ag.vim'
-    nnoremap <leader>a :Ag -i<space>
-
-    Bundle 'matthias-guenther/hammer.vim'
-    nmap <leader>p :Hammer<cr>
-
     Bundle 'junegunn/vim-easy-align'
     Bundle 'tpope/vim-endwise'
     Bundle 'tpope/vim-repeat'
@@ -171,8 +165,6 @@ if count(g:vimified_packages, 'coding')
     :vmap <leader>f y:let @/=escape(@", '\\[]$^*.')<CR>:set hls<CR>:silent Ggrep -F "<C-R>=escape(@", '\\"#')<CR>"<CR>:ccl<CR>:cw<CR><CR>
 
     Bundle 'scrooloose/syntastic'
-    let g:syntastic_enable_signs=1
-    let g:syntastic_auto_loc_list=1
     let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby', 'python', ], 'passive_filetypes': ['html', 'css', 'slim'] }
 
     " --
@@ -183,7 +175,7 @@ if count(g:vimified_packages, 'coding')
     autocmd FileType gitcommit setlocal foldmethod=manual
 
     " Check API docs for current word in Zeal: http://zealdocs.org/
-    nnoremap <leader>d :!zeal --query "<cword>"&<CR><CR>
+    Bundle 'KabbAmine/zeavim.vim'
 endif
 " }}}
 
@@ -359,6 +351,7 @@ noremap <right> <nop>
 
 " Yank from current cursor position to end of line
 map Y y$
+
 " Yank content in OS's clipboard. `o` stands for "OS's Clipoard".
 vnoremap <leader>yo "*y
 " Paste content from OS's clipboard
